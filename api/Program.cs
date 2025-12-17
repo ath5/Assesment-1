@@ -1,4 +1,6 @@
 
+using AvalphaTechnologies.CommissionCalculator.Service;
+
 namespace AvalphaTechnologies.CommissionCalculator
 {
     public class Program
@@ -9,7 +11,10 @@ namespace AvalphaTechnologies.CommissionCalculator
 
             // Add services to the container.
 
-            builder.Services.AddControllers();
+            builder.Services.AddControllers(); 
+            builder.Services.AddScoped<ICommissionCalculatorService, CommissionCalculatorService>();
+
+
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
